@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beam Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <section class="hero is-medium">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">Beam Calculator</h1>
+          <h2 class="subtitle">
+            Welcome to the Beam Calculator. A beam calculator to generate shear
+            force diagrams and bending moment diagrams for simply supported and
+            cantilvered beams. Select a beam and enter dimensions to get
+            started. Then scroll down to see shear force diagram and bending
+            moment diagram
+          </h2>
+        </div>
+      </div>
+    </section>
+    <section class="section beams">
+      <div class="container">
+        <h1 class="title is-one has-text-centered">
+          CHOOSE THE TYPE OF ARRANGEMENT
+        </h1>
+        <div class="columns">
+          <div
+            id="expend-1"
+            class="column is-half-mobile is-one-quarter-desktop"
+          >
+            <a class="acard" href="#dimentions">
+              <figure class="beam-img image is-128x128">
+                <img src="./images/simple-1.png" />
+              </figure>
+            </a>
+          </div>
+          <div
+            id="expend-2"
+            class="column is-half-mobile is-one-quarter-desktop"
+          >
+            <a href="#dimentions" class="acard"
+              ><figure class="beam-img image is-128x128">
+                <img src="./images/simple-2.png" /></figure
+            ></a>
+          </div>
+          <div
+            id="expend-3"
+            class="column is-half-mobile is-one-quarter-desktop"
+          >
+            <a href="#dimentions" class="acard">
+              <figure class="beam-img image is-128x128">
+                <img src="./images/simple-3.png" />
+              </figure>
+            </a>
+          </div>
+        </div>
+        <div class="columns">
+          <div
+            id="expend-4"
+            class="column is-half-mobile is-one-quarter-desktop"
+          >
+            <a href="#dimentions" class="acard"
+              ><figure class="beam-img image is-128x128">
+                <img src="./images/simple-4.png" /></figure
+            ></a>
+          </div>
+          <div
+            id="expend-5"
+            class="column is-half-mobile is-one-quarter-desktop"
+          >
+            <a href="#dimentions" class="acard"
+              ><figure class="beam-img image is-128x128">
+                <img src="./images/simple-5.png" /></figure
+            ></a>
+          </div>
+          <div
+            id="expend-6"
+            class="column is-half-mobile is-one-quarter-desktop"
+          >
+            <a href="#dimentions" class="acard">
+              <figure class="beam-img image is-128x128">
+                <img src="./images/simple-6.png" /></figure
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="dimentions" class="section dimensions">
+      <h1 class="title is-one has-text-centered">Please Enter Details</h1>
+      <div class="columns">
+        <div class="column dimagec">
+          <figure class="image dimage auto-center">
+            <img src="./images/simple-1.png" alt="" />
+          </figure>
+        </div>
+        <div class="column">
+          <div class="field">
+            <label class="qLabel label">q (kN/m)</label>
+            <div class="control">
+              <input
+                required
+                class="input qInput"
+                type="text"
+                placeholder="q"
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">L (m)</label>
+            <div class="control">
+              <input
+                required
+                class="input lInput"
+                type="text"
+                placeholder="L"
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label"> Point of interest x (m)</label>
+            <div class="control">
+              <input class="input xInput" type="text" placeholder="x" />
+            </div>
+          </div>
+          <div class="field is-grouped">
+            <div class="control">
+              <a href="#graph"
+                ><button type="submit" class="button submit">
+                  Calculate
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="graph" class="section graph" style="display: none">
+      <h1 class="title is-one has-text-centered">Results</h1>
+      <div class="columns vtable auto-center">
+        <div class="column">
+          <p>At x = <span id="valueX"></span> m</p>
+        </div>
+        <div class="column">
+          <p>Moment (M) = <span id="valueM"></span> kN-m</p>
+        </div>
+        <div class="column">
+          <p>Shear (V) = <span id="valueV"></span> kN</p>
+        </div>
+      </div>
+      <div class="columns vtable auto-center">
+        <div class="column">
+          <p>Maximum Bending Moment Value (kN-m) = <span id="maxM"></span></p>
+        </div>
+        <div class="column">
+          <p>Maximum Shear Stress Value (kN) = <span id="maxV"></span></p>
+        </div>
+      </div>
+      <div class="container">
+        <a href="#dimentions"
+          ><button id="another" class="button submit auto-center">
+            Calculate for another value of x
+          </button></a
+        >
+      </div>
+      <div class="columns function">
+        <div id="moment" class="column">
+          <div id="momentg"></div>
+          <h4 class="title is-4 has-text-centered">BENDING MOMENT DIAGRAM</h4>
+        </div>
+        <div id="shear" class="column">
+          <div id="shearg"></div>
+          <h4 class="title is-4 has-text-centered">SHEAR FORCE DIAGRAM</h4>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="columns">
+        <div class="column">
+          <p>CREATED BY</p>
+          <p>SARTHAK BHAGWAT</p>
+          <p>190103087</p>
+          <p>MECHANICAL ENGINEERING</p>
+          <p>INDIAN INSTITUTE OF TECHNOLOGY</p>
+          <p>GUWAHATI ASSAM</p>
+        </div>
+        <div class="column">
+          <p>
+            FOR A PROJECT OF THE<br />
+            SOLID MECHANICS COURSE ME 212
+          </p>
+        </div>
+        <div class="column">
+          <p>INSTRUCTORS</p>
+          <p>PROF. UDAY SHANKAR DIXIT</p>
+          <p>PROF. SUBRAMANI KANAGARAJ</p>
+          <p>PROF. NELSON MUTHU</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
+    <script src="./scripts/chart.js"></script>
+  </body>
+</html>
