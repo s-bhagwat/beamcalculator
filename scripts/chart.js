@@ -182,8 +182,8 @@ const getValue = (b) => {
   document.getElementById("valueX").textContent = x;
   let m = functionObj[b].momentFunction(q, l).replace(/x/g, `${x}`);
   let v = functionObj[b].shearFunction(q, l).replace(/x/g, `${x}`);
-  let maxM = functionObj[b].shearDomain(q, l) * 1;
-  let maxV = functionObj[b].momentDomain(q, l) * 1;
+  let maxV = functionObj[b].shearDomain(q, l) * 1;
+  let maxM = functionObj[b].momentDomain(q, l) * 1;
 
   m = eval(m) * 1;
   v = eval(v) * 1;
