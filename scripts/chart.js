@@ -113,7 +113,7 @@ document.querySelector(".submit").addEventListener("click", () => {
 
   //field validators
 
-  if (x1 * q2 * l3 && x1 <= l3) {
+  if (!isNaN(x1) * !isNaN(q2) * l3 && x1 <= l3) {
     document.querySelector("input").classList.add("is-success");
     getValue(beam);
 
@@ -129,7 +129,7 @@ document.querySelector(".submit").addEventListener("click", () => {
   } else {
     document.getElementById("graph").style.display = "none";
   }
-  if (!x1 || x1 > l3) {
+  if (isNaN(x1) || x1 > l3) {
     document.querySelectorAll("input")[2].classList.add("is-danger");
     document
       .querySelectorAll("input")[2]
@@ -142,7 +142,7 @@ document.querySelector(".submit").addEventListener("click", () => {
     document.querySelectorAll("input")[2].classList.add("is-success");
   }
 
-  if (!q2) {
+  if (isNaN(q2)) {
     document.querySelectorAll("input")[0].classList.add("is-danger");
     document
       .querySelectorAll("input")[0]
